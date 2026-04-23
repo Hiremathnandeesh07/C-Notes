@@ -12,8 +12,14 @@ namespace C_3rd_DAY
      */
     internal class task2_23_04_2026
     {
+        static string FullName(string first,string middle,string last)
+        {
+            return first + " " + middle + " " + last;
+        }
         static void Main(string[] args)
         {
+            Console.WriteLine("enter first middle and lastname");
+            Console.WriteLine(FullName(Console.ReadLine(), Console.ReadLine(), Console.ReadLine()));
             
         }
     }

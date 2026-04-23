@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>C_3rd_DAY.NamedParameters</StartupObject>
+    <StartupObject>C_3rd_DAY.task8_23_04_2026</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,12 +54,16 @@
     <Compile Include="PassByValueReference.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="task10_23_04_2026.cs" />
     <Compile Include="task1_23_04_2026.cs" />
     <Compile Include="task2_23_04_2026.cs" />
     <Compile Include="task3_23_04_2026.cs" />
     <Compile Include="task4_23_04_2026.cs" />
     <Compile Include="task5_23_04_2026.cs" />
     <Compile Include="task6_23_04_2026.cs" />
+    <Compile Include="task7_23_04_2026.cs" />
+    <Compile Include="task8_23_04_2026.cs" />
+    <Compile Include="task9_23_04_2026.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

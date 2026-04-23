@@ -14,9 +14,18 @@ namespace C_3rd_DAY
      */
     internal class task9_23_04_2026
     {
+        static void DisplayEmployeeDetails(string empCompany, string empName)
+        {
+            Console.WriteLine($"employee name is {empName} and company is {empCompany}");
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("enter name of the employee : ");
+            string name = Console.ReadLine();
+            Console.WriteLine("enter branch of the company : ");
+            string company = Console.ReadLine();
+            DisplayEmployeeDetails(empName: name, empCompany: company);
+            DisplayEmployeeDetails(empCompany: company, empName: name);
 
         }
     }

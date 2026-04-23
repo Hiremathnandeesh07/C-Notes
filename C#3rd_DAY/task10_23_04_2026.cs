@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace C_3rd_DAY
 {
-    /*
-     * take input and find both sum and product using out parameter
-     */
-    internal class task7_23_04_2026
+    // find the prime number in n numbers
+    internal class task10_23_04_2026
     {
     }
 }
