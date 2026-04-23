@@ -51,14 +51,19 @@
   <ItemGroup>
     <Compile Include="Arrays.cs" />
     <Compile Include="ifElse.cs" />
+    <Compile Include="IPLmatch.cs" />
     <Compile Include="LeapOrNot.cs" />
     <Compile Include="loops.cs" />
     <Compile Include="NullableConcept.cs" />
+    <Compile Include="PrintSumMaxcopy.cs" />
+    <Compile Include="ProductMatrices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseNumber.cs" />
     <Compile Include="Salutation.cs" />
+    <Compile Include="SearchingElement.cs" />
     <Compile Include="testing.cs" />
+    <Compile Include="transpose.cs" />
     <Compile Include="yearsCalculations.cs" />
   </ItemGroup>
   <ItemGroup>

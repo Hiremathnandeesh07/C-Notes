@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _22_04_2026__TASKS_C_
+namespace C_2nd_day
 {
-    internal class TransposeOfMatrix
+    internal class transpose
     {
         static void Main(string[] args)
         {
@@ -29,7 +29,7 @@ namespace _22_04_2026__TASKS_C_
                     Console.WriteLine("Enter number for " + i + "th row and " + j + "th column");
                     arr[i, j] = Convert.ToInt32(Console.ReadLine());
                     newArr[j, i] = arr[i, j];
-                    
+
                 }
 
             }

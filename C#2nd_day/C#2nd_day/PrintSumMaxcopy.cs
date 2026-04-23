@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _22_04_2026__TASKS_C_
+namespace C_2nd_day
 {
-    internal class PrintSumMaxCopyArray
+    internal class PrintSumMaxcopy
     {
         static void Main(string[] args)
         {
@@ -15,10 +15,10 @@ namespace _22_04_2026__TASKS_C_
             int[] arr = new int[len];
             int sum = 0;
             int max = int.MinValue;
-            
-            for(int i = 0; i < len; i++)
+
+            for (int i = 0; i < len; i++)
             {
-                Console.Write("enter the " + (i+1) + "th element : " );
+                Console.Write("enter the " + (i + 1) + "th element : ");
                 arr[i] = Convert.ToInt32(Console.ReadLine());
                 sum += arr[i];
                 if (arr[i] > max)
