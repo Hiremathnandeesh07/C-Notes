@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B6085CA-3BFC-4E17-9C84-93359421031F}</ProjectGuid>
+    <ProjectGuid>{1EA3FB3D-DF21-412C-B5E4-FFBB2EA4A389}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>C_3rd_DAY</RootNamespace>
-    <AssemblyName>C#3rd_DAY</AssemblyName>
+    <RootNamespace>CallingMyLibrary</RootNamespace>
+    <AssemblyName>CallingMyLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,10 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>C_3rd_DAY.task11_23_04_2026</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ArithmeticLib">
+      <HintPath>..\ArithmeticLib\bin\Debug\ArithmeticLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,25 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NamedParameters.cs" />
-    <Compile Include="OptionalParameters.cs" />
-    <Compile Include="OutParameter.cs" />
-    <Compile Include="paramParameter.cs" />
-    <Compile Include="ParamParametersWithStringValues.cs" />
-    <Compile Include="PassByValueReference.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="task10_23_04_2026.cs" />
-    <Compile Include="task11_23_04_2026.cs" />
-    <Compile Include="task1_23_04_2026.cs" />
-    <Compile Include="task2_23_04_2026.cs" />
-    <Compile Include="task3_23_04_2026.cs" />
-    <Compile Include="task4_23_04_2026.cs" />
-    <Compile Include="task5_23_04_2026.cs" />
-    <Compile Include="task6_23_04_2026.cs" />
-    <Compile Include="task7_23_04_2026.cs" />
-    <Compile Include="task8_23_04_2026.cs" />
-    <Compile Include="task9_23_04_2026.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
