@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="../StaticAndNonStatic/StaticAndNonStatic.csproj" Id="72cfee6f-1dd9-4165-b2a3-e61ff8ef164e" />
+  <Project Path="CopyConstructors/CopyConstructors.csproj" Id="0ea33f39-eed4-424f-bea8-0e0fb8c7004d" />
+  <Project Path="Hiding/Hiding.csproj" Id="90a4c625-d12e-4d40-a02b-040b7938429f" />
+  <Project Path="Inheritance/Inheritance.csproj" Id="768b06f1-29b2-458e-9557-4d18a0cf3cb6" />
+  <Project Path="Nandeesh_H_OOPS_24-04-2026/Nandeesh_H_TASKS_OOPS_24-04-2026.csproj" Id="bcebb852-2101-4199-944e-7df544923c28" />
+  <Project Path="PolymorphismOverloading/PolymorphismOverloading.csproj" Id="6c77fbba-a5d9-4c7a-8fc1-dfc4116460c2" />
+  <Project Path="StaticClasses/StaticClasses.csproj" Id="3c0a0a93-06b1-4e59-aca6-cef4e9d11428" />
+</Solution>
