@@ -42,6 +42,30 @@ namespace Nandeesh_H_OOPS_24_04_2026
             emp.DisplayEmployeeDetails();
             emp.AcceptEmployeeDetails1("nandeesh", 33, 23442);
             emp.DisplayEmployeeDetails();
-        }
+
+
+
+            // TaskEmployee
+         
+                TaskEmployee e1 = new TaskEmployee();
+                TaskEmployee e2 = new TaskEmployee();
+                TaskEmployee e3 = new TaskEmployee();
+
+                Console.WriteLine("Enter details of Employee 1");
+                e1.AcceptDetails();
+
+                Console.WriteLine("\nEnter details of Employee 2");
+                e2.AcceptDetails();
+
+                Console.WriteLine("\nEnter details of Employee 3");
+                e3.AcceptDetails();
+
+                Console.WriteLine("\n--- Employee Details ---");
+                e1.DisplayDetails();
+                e2.DisplayDetails();
+                e3.DisplayDetails();
+            
+        
+    }
     }
 }

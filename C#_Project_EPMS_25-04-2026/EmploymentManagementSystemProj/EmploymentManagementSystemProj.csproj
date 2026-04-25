@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCEBB852-2101-4199-944E-7DF544923C28}</ProjectGuid>
+    <ProjectGuid>{E7453918-ACAD-4766-B5DA-C0D4E431E6CD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Nandeesh_H_OOPS_24_04_2026</RootNamespace>
-    <AssemblyName>Nandeesh_H_OOPS_24-04-2026</AssemblyName>
+    <RootNamespace>EmploymentManagementSystemProj</RootNamespace>
+    <AssemblyName>EmploymentManagementSystemProj</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Nandeesh_H_OOPS_24_04_2026.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,14 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TaskEmployee.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\FullTimeEmployee.cs" />
+    <Compile Include="Models\PartTimeEmployee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task5SingleInheritanceSchool.cs" />
-    <Compile Include="Task6OrderEmpDetails.cs" />
-    <Compile Include="Task3OverLoading.cs" />
-    <Compile Include="Task4Person.cs" />
-    <Compile Include="testing.cs" />
+    <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\SortingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

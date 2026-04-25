@@ -23,6 +23,8 @@ namespace Nandeesh_H_OOPS_24_04_2026
         }
     }
 
+
+    // level 1 inheritance
     class Task4Employee : Task4Person
     {
         public int EmployeeId;
@@ -32,7 +34,7 @@ namespace Nandeesh_H_OOPS_24_04_2026
             Console.WriteLine("Employee ID: " + EmployeeId);
         }
     }
-
+    // level 2 inheritance
     class Task4Manager : Task4Employee
     {
         public string Department;

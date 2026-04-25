@@ -16,6 +16,8 @@ namespace Nandeesh_H_OOPS_24_04_2026
         private string name;
         private double salary;
         public static string companyName = "Acuvate";
+
+        // constructor 1
         public void AcceptEmployeeDetails(int employeeId, string name, double salary)
         {
             this.employeeId = employeeId;
@@ -23,13 +25,15 @@ namespace Nandeesh_H_OOPS_24_04_2026
             this.salary = salary;
         }
 
-
+        // reordered constructor 1
         public void AcceptEmployeeDetails1(string name, int employeeId,double salary)
         {
             this.employeeId = employeeId;
             this.name = name;
             this.salary = salary;
         }
+
+        //displaydetails
         public void DisplayEmployeeDetails()
         {
             Console.WriteLine($"Employee Id :{employeeId}");

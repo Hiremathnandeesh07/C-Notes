@@ -12,6 +12,8 @@ namespace Nandeesh_H_OOPS_24_04_2026
         public string name;
         public int stdId;
 
+
+        // constructor
         public Task5SingleInheritanceSchool(string name,int stdId)
         {
             this.name = name;
@@ -19,9 +21,13 @@ namespace Nandeesh_H_OOPS_24_04_2026
         }
 
     }
+
+    // inheriting parent class
     class Hostel : Task5SingleInheritanceSchool
     {
         public int hostelId;
+
+        // child class constructor declare and defining
         public Hostel(string name,int stdId,int hostelId) : base(name,stdId)
         {
             this.hostelId = hostelId;
