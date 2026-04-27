@@ -39,13 +39,13 @@ namespace EmploymentManagementSystemProj.Services
                 if (emp is PartTimeEmployee ptm)
                 {
                     Console.WriteLine(
-                        $"{ptm.empId,-10}{ptm.empName,-20}{ptm.empSalary,-15:F2}Part-Time \n"
+                        $"{ptm.EmpId,-10}{ptm.EmpName,-20}{ptm.EmpSalary,-15:F2}Part-Time \n"
                     );
                 }
                 if (emp is FullTimeEmployee ftm)
                 {
                     Console.WriteLine(
-                        $"{ftm.empId,-10}{ftm.empName,-20}{ftm.empSalary,-15:F2}Full-Time \n"
+                        $"{ftm.EmpId,-10}{ftm.EmpName,-20}{ftm.EmpSalary,-15:F2}Full-Time \n"
                     );
                 }
 
@@ -65,13 +65,13 @@ namespace EmploymentManagementSystemProj.Services
                 {
 
                     Console.WriteLine(
-                        $"{ptm.empId,-10}{ptm.empName,-20}{ptm.empSalary,-20} {bonus,-15:F2}Part-Time \n"
+                        $"{ptm.EmpId,-10}{ptm.EmpName,-20}{ptm.EmpSalary,-20} {bonus,-15:F2}Part-Time \n"
                     );
                 }
                 if (emp is FullTimeEmployee ftm)
                 {
                     Console.WriteLine(
-                        $"{ftm.empId,-10}{ftm.empName,-20}{ftm.empSalary,-20}{bonus,-15:F2}Full-Time \n"
+                        $"{ftm.EmpId,-10}{ftm.EmpName,-20}{ftm.EmpSalary,-20}{bonus,-15:F2}Full-Time \n"
                     );
                 }
 
@@ -105,18 +105,18 @@ public static string ReverseWordOrder(string name)
             Console.WriteLine($"Company Name {Employee.CompanyName}");
             foreach (Employee emp in employees)
             {
-                string newName = ReverseWordOrder(emp.empName);
+                string newName = ReverseWordOrder(emp.EmpName);
     
                 if (emp is PartTimeEmployee ptm)
                 {
                     Console.WriteLine(
-                        $"Original Name is : {emp.empName} and Reversed Name is : {newName}"
+                        $"Original Name is : {emp.EmpName} and Reversed Name is : {newName}"
                     );
                 }
                 if (emp is FullTimeEmployee ftm)
                 {
                     Console.WriteLine(
-                        $"Original Name is : {emp.empName} and Reversed Name is : {newName}"
+                        $"Original Name is : {emp.EmpName} and Reversed Name is : {newName}"
                     );
                 }
 
@@ -132,13 +132,13 @@ public static string ReverseWordOrder(string name)
             //  Count occurrences of each name
             foreach (Employee emp in employees)
             {
-                if (namesMap.ContainsKey(emp.empName))
+                if (namesMap.ContainsKey(emp.EmpName))
                 {
-                    namesMap[emp.empName]++;
+                    namesMap[emp.EmpName]++;
                 }
                 else
                 {
-                    namesMap[emp.empName] = 1;
+                    namesMap[emp.EmpName] = 1;
                 }
             }
 

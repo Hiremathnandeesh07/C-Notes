@@ -8,10 +8,48 @@ namespace EmploymentManagementSystemProj.Models
 {
     internal class Employee
     {
-        public int empId;
-        public string empName;
-        public double empSalary;
+        private int empId;
+        private string empName;
+        private double empSalary;
         public static string CompanyName = "Acuvate Software Pvt Ltd";
+
+
+        // get set method tp access and set values
+        public int EmpId
+        {
+            get
+            {
+                return empId;
+            }
+            set
+            {
+                empId = value;
+            }
+        }
+
+        public string EmpName
+        {
+            get
+            {
+                return empName;
+            }
+            set
+            {
+                empName = value;
+            }
+        }
+
+        public double EmpSalary
+        {
+            get
+            {
+                return empSalary;
+            }
+            set
+            {
+                empSalary = value;
+            }
+        }
 
 
         //base constructor

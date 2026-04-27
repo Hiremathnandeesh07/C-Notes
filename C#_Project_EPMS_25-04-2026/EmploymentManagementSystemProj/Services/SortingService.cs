@@ -23,7 +23,7 @@ namespace EmploymentManagementSystemProj.Services
         // implimenting sorting using builtin
         public void BuiltInSorting()
         {
-            employees.Sort((e1, e2) => e1.empSalary.CompareTo(e2.empSalary));
+            employees.Sort((e1, e2) => e1.EmpSalary.CompareTo(e2.EmpSalary));
         }
 
 
@@ -35,7 +35,7 @@ namespace EmploymentManagementSystemProj.Services
             {
                 for(int j = 0; j < length - 1 - i; j++)
                 {
-                    if (employees[j].empSalary > employees[j+1].empSalary)
+                    if (employees[j].EmpSalary > employees[j+1].EmpSalary)
                     {
 
                         Employee temp = employees[j];
@@ -73,12 +73,12 @@ namespace EmploymentManagementSystemProj.Services
 
         private int Partition(int low, int high)
         {
-            double pivot = employees[high].empSalary;
+            double pivot = employees[high].EmpSalary;
             int i = low - 1;
 
             for (int j = low; j < high; j++)
             {
-                if (employees[j].empSalary <= pivot)
+                if (employees[j].EmpSalary <= pivot)
                 {
                     i++;
                     Swap(i, j);
@@ -113,7 +113,7 @@ namespace EmploymentManagementSystemProj.Services
 
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (employees[j].empSalary < employees[minIndex].empSalary)
+                    if (employees[j].EmpSalary < employees[minIndex].EmpSalary)
                     {
                         minIndex = j;
                     }
@@ -137,7 +137,7 @@ namespace EmploymentManagementSystemProj.Services
                 return -1;
             }
 
-            var salaries = new SortedSet<double>(employees.Select(e => e.empSalary));
+            var salaries = new SortedSet<double>(employees.Select(e => e.EmpSalary));
 
             if (n > salaries.Count)
             {

@@ -63,7 +63,7 @@ namespace EmploymentManagementSystemProj
             while (!isExit)
             {
                 Console.WriteLine(
-    "\n 1. Add Employee\n" +
+    "\n1. Add Employee\n" +
     "2. View Employee\n" +
     "3. Sort Employee\n" +
     "4. Find the Nth Highest Salary\n" +

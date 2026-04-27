@@ -19,7 +19,7 @@ namespace EmploymentManagementSystemProj.Models
 
         public  override double CalculateBonus()
         {
-            return empSalary*0.05;
+            return EmpSalary*0.05;
         }
 
         
