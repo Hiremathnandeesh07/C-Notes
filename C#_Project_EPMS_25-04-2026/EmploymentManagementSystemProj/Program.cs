@@ -10,7 +10,9 @@ using System.Threading.Tasks;
 
 namespace EmploymentManagementSystemProj
 {
-    internal class Program
+    internal abstract class Program
+        // the reason i made this class ABSTRACT is that i am not creating any EMPLOYEE object type as there is no meaning in doing it
+        // because that particular employee cannot be considered as either FULL TIME or PART TIME
     {
         static void Main(string[] args)
         {

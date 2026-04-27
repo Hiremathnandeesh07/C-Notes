@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../Abstraction/Abstraction.csproj" Id="ac347220-8f99-4045-8b87-ce4c38e423af" />
+  <Project Path="Testing.csproj" Id="2f602148-0d02-4fdc-868a-333ecfa13f43" />
+</Solution>
