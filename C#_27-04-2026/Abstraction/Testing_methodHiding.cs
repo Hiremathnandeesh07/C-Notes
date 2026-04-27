@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace Abstraction
 {
-    class Dog
+    abstract class Dog
     {
-        public  void speek()
+        public virtual void speek()
         {
             Console.WriteLine("dog is speeking");
         }
+        
+        
     }
 
     class Cat :Dog
     {
-        public void speek()
+        public new void speek()
         {
             Console.WriteLine("cat is speeking");
         }
