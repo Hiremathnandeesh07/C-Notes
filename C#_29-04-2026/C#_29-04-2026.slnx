@@ -1,9 +1,14 @@
 <Solution>
+  <Project Path="../ConvertToStringMethods/ConvertToStringMethods.csproj" />
+  <Project Path="../NestedClasses/NestedClasses.csproj" />
+  <Project Path="AccessModifiers/AccessModifiers.csproj" />
+  <Project Path="Assembly11/Assembly11.csproj" />
   <Project Path="BaseKeywordInInheritance/FinallyThrowException.csproj" />
   <Project Path="C#_29-04-2026.csproj" />
   <Project Path="CustomException/CustomException.csproj" />
   <Project Path="InnerException/InnerExceptionCode.csproj" />
   <Project Path="NestedTryCatch/NestedTryCatch.csproj" />
+  <Project Path="ProjectProtectedInternal/ProjectProtectedInternal.csproj" />
   <Project Path="ThrowException/ThrowException.csproj" />
   <Project Path="ThrowRethrow/ThrowRethrow.csproj" />
 </Solution>
