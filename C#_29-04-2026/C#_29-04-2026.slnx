@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="BaseKeywordInInheritance/FinallyThrowException.csproj" />
+  <Project Path="C#_29-04-2026.csproj" />
+  <Project Path="CustomException/CustomException.csproj" />
+  <Project Path="InnerException/InnerExceptionCode.csproj" />
+  <Project Path="NestedTryCatch/NestedTryCatch.csproj" />
+  <Project Path="ThrowException/ThrowException.csproj" />
+  <Project Path="ThrowRethrow/ThrowRethrow.csproj" />
+</Solution>

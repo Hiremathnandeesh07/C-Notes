@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="Abstraction.csproj" />
+  <Project Path="Interface/Interface.csproj" />
+  <Project Path="InterfaceHousing/InterfaceHousingHalfLooseCoupling.csproj" />
+  <Project Path="LooseCoupling/FullLooseCoupling.csproj" />
+  <Project Path="PaymentSystemLooseCouplingInterface/PaymentSystemLooseCouplingInterface.csproj" />
+  <Project Path="PhoneSIMCARDLooseCouplingInterface/PhoneSIMCARDLooseCouplingInterface.csproj" />
+  <Project Path="task1/Task1_Abstraction.csproj" />
+  <Project Path="tASK2/Task2_MultipleInterfaceMouseKeyboard.csproj" />
+</Solution>
