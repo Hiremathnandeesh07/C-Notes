@@ -1,14 +1,18 @@
 <Solution>
+  <Project Path="../C#_30-04-2026/ConsoleApp1/ConsoleApp1.csproj" Id="a552fec8-af99-4982-b47c-d8aec8e7f208" />
   <Project Path="../ConvertToStringMethods/ConvertToStringMethods.csproj" />
   <Project Path="../NestedClasses/NestedClasses.csproj" />
-  <Project Path="AccessModifiers/AccessModifiers.csproj" />
-  <Project Path="Assembly11/Assembly11.csproj" />
-  <Project Path="BaseKeywordInInheritance/FinallyThrowException.csproj" />
-  <Project Path="C#_29-04-2026.csproj" />
-  <Project Path="CustomException/CustomException.csproj" />
-  <Project Path="InnerException/InnerExceptionCode.csproj" />
-  <Project Path="NestedTryCatch/NestedTryCatch.csproj" />
-  <Project Path="ProjectProtectedInternal/ProjectProtectedInternal.csproj" />
-  <Project Path="ThrowException/ThrowException.csproj" />
-  <Project Path="ThrowRethrow/ThrowRethrow.csproj" />
+  <Project Path="AccessModifiers/AccessModifiers.csproj" Id="1ce2884c-27f8-4d56-a9ba-27c0930fb5dc" />
+  <Project Path="Assembly11/Assembly11.csproj" Id="9c44732b-5904-45dd-b867-cdb8e92af429" />
+  <Project Path="BaseKeywordInInheritance/FinallyThrowException.csproj" Id="730d9cea-6010-47f9-9998-f3b4f0d27217" />
+  <Project Path="C#_29-04-2026.csproj" Id="b85c2de6-0a56-42fc-beab-31cee716562f" />
+  <Project Path="CustomException/CustomException.csproj" Id="6a285153-eb75-4e1a-b3c6-58a5cb01e79c" />
+  <Project Path="CustomExceptionDemo/CustomExceptionDemo.csproj" Id="f199e40e-5958-40fe-8b0d-250416934957" />
+  <Project Path="InnerException/InnerExceptionCode.csproj" Id="79bead35-1bb0-47c2-89f1-fef39e17dc5c" />
+  <Project Path="NestedTryCatch/NestedTryCatch.csproj" Id="960b9ea0-7d32-46db-a58a-27e8a35b9e0f" />
+  <Project Path="ProjectProtectedInternal/ProjectProtectedInternal.csproj" Id="69b25b8f-85fd-4a9f-9129-3ac75f5fc8e7" />
+  <Project Path="StringBuilder/StringBuilderDemo.csproj" Id="b52d4440-8f21-4a29-bb97-bb3b91aa2480" />
+  <Project Path="ThrowException/ThrowException.csproj" Id="3be7873c-fba7-43a0-aa6c-b980a1686bc6" />
+  <Project Path="ThrowRethrow/ThrowRethrow.csproj" Id="71fb4729-3b78-41c9-865f-7ffef3b01dc0" />
+  <Project Path="ToStringMethods/ToStringMethods.csproj" Id="8d4cfa5b-8e2a-4859-bdf8-8fa202e306f7" />
 </Solution>
