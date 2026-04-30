@@ -9,9 +9,15 @@ namespace GetterSetterDemo
 
     class DemoClass
     {
+        // declaration
         private string name;
-        //public string Name { set; get; }
 
+
+        // initialized without explicitly writting getter and setter
+        public int age { get; set; }
+        public string model { get; set; }
+
+        //property
         public string Name
         {
             get
