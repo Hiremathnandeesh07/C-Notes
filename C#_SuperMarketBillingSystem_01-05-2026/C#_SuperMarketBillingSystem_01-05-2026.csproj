@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5F75EAA-F851-4D97-ACBB-DFEF061FC670}</ProjectGuid>
+    <ProjectGuid>{69BAD64C-46BE-4392-820E-DEF044B8BF29}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MiniProject_ProductManagement_CRUD</RootNamespace>
-    <AssemblyName>MiniProject_ProductManagement_CRUD</AssemblyName>
+    <RootNamespace>C__SuperMarketBillingSystem_01_05_2026</RootNamespace>
+    <AssemblyName>C#_SuperMarketBillingSystem_01-05-2026</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Product.cs" />
+    <Compile Include="AuthService.cs" />
+    <Compile Include="CartModel.cs" />
+    <Compile Include="CartServices.cs" />
+    <Compile Include="CustomerModel.cs" />
+    <Compile Include="CustomerServices.cs" />
+    <Compile Include="ProductModel.cs" />
     <Compile Include="ProductServices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

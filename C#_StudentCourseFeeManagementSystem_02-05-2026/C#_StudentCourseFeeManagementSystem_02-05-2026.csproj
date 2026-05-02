@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5F75EAA-F851-4D97-ACBB-DFEF061FC670}</ProjectGuid>
+    <ProjectGuid>{91155D7E-85D2-4E14-BE5C-579AC17FCC5F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MiniProject_ProductManagement_CRUD</RootNamespace>
-    <AssemblyName>MiniProject_ProductManagement_CRUD</AssemblyName>
+    <RootNamespace>C__StudentCourseFeeManagementSystem_02_05_2026</RootNamespace>
+    <AssemblyName>C#_StudentCourseFeeManagementSystem_02-05-2026</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductServices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
