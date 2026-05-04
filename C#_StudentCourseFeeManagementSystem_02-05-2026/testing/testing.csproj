@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91155D7E-85D2-4E14-BE5C-579AC17FCC5F}</ProjectGuid>
+    <ProjectGuid>{09FCF175-9CF8-4AE9-8FF1-9717C1B57B70}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>C__StudentCourseFeeManagementSystem_02_05_2026</RootNamespace>
-    <AssemblyName>C#_StudentCourseFeeManagementSystem_02-05-2026</AssemblyName>
+    <RootNamespace>testing</RootNamespace>
+    <AssemblyName>testing</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Course.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CourseServices.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="StudentServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

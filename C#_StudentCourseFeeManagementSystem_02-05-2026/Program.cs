@@ -10,140 +10,104 @@ namespace C__StudentCourseFeeManagementSystem_02_05_2026
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Student Course and Fees Management System!");
 
-            using System;
-
-class Program
-        {
-            static void Main()
+            while (true)
             {
-                int choice;
+                Console.WriteLine("Choose any options below:");
+                Console.WriteLine("\n1. Add Course");
+                Console.WriteLine("2. Add Student");
+                Console.WriteLine("3. Display Courses");
+                Console.WriteLine("4. Display Students");
+                Console.WriteLine("5. Update Student");
+                Console.WriteLine("6. Update Fee Paid");
+                Console.WriteLine("7. Delete Student");
+                Console.WriteLine("8. Delete Course");
+                Console.WriteLine("9. Monthly revenue");
+                Console.WriteLine("10. Exit");
 
-                do
+                int choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
                 {
-                    Console.WriteLine("\n===== STUDENT MANAGEMENT MENU =====");
-                    Console.WriteLine("1. Add Course");
-                    Console.WriteLine("2. Add Student");
-                    Console.WriteLine("3. View All Students");
-                    Console.WriteLine("4. View All Courses");
-                    Console.WriteLine("5. Update Student");
-                    Console.WriteLine("6. Delete Student");
-                    Console.WriteLine("7. Search Student by Name");
-                    Console.WriteLine("8. Search by Course");
-                    Console.WriteLine("9. Search Students with Fee Due");
-                    Console.WriteLine("10. Search by Admission Month");
-                    Console.WriteLine("11. Exit");
-                    Console.Write("Enter your choice: ");
+                    case 1:
 
-                    bool isValid = int.TryParse(Console.ReadLine(), out choice);
+                        Console.Write("Course Id: ");
+                        int courseId = int.Parse(Console.ReadLine());
 
-                    if (!isValid)
-                    {
-                        Console.WriteLine("Invalid input. Enter a number.");
-                        continue;
-                    }
+                        Console.Write("Course Name: ");
+                        string courseName = Console.ReadLine();
 
-                    switch (choice)
-                    {
-                        case 1:
-                            AddCourse();
-                            break;
-                        case 2:
-                            AddStudent();
-                            break;
-                        case 3:
-                            ViewAllStudents();
-                            break;
-                        case 4:
-                            ViewAllCourses();
-                            break;
-                        case 5:
-                            UpdateStudent();
-                            break;
-                        case 6:
-                            DeleteStudent();
-                            break;
-                        case 7:
-                            SearchStudentByName();
-                            break;
-                        case 8:
-                            SearchByCourse();
-                            break;
-                        case 9:
-                            SearchStudentsWithFeeDue();
-                            break;
-                        case 10:
-                            SearchByAdmissionMonth();
-                            break;
-                        case 11:
-                            Console.WriteLine("Exiting application...");
-                            break;
-                        default:
-                            Console.WriteLine("Invalid choice. Try again.");
-                            break;
-                    }
+                        Console.Write("Fee: ");
+                        decimal fee = decimal.Parse(Console.ReadLine());
 
-                } while (choice != 11);
+                        CourseServices.AddCourse(courseId, courseName, fee); break;
+
+                    case 2:
+                        Console.Write("Student Id: ");
+                        int id = int.Parse(Console.ReadLine());
+
+                        Console.Write("Name: ");
+                        string name = Console.ReadLine();
+
+                        Console.Write("Enter Course Name: ");
+                        string cName = Console.ReadLine();
+
+                        Course course = null;
+
+                        foreach (var c in CourseServices.courses)
+                        {
+                            if (c.CourseName == cName)
+                            {
+                                course = c;
+                                break;
+                            }
+
+                        }
+
+                        if (course == null)
+                        {
+                            Console.WriteLine("Course not found!");
+                            break;
+                        }
+
+                        StudentServices.AddStudent(id, name, cName, course.Fee, 0, DateTime.Now);
+                        break;
+
+
+                    case 3:
+                        CourseServices.DisplayCourses();
+                        break;
+
+                    case 4:
+                        StudentServices.DisplayStudent();
+                        break;
+
+                    case 5:
+                        StudentServices.UpdateStudent();
+                        break;
+
+                    case 6:
+                        StudentServices.UpdateFee();
+                        break;
+
+                    case 7:
+                        StudentServices.DeleteStudent(); break;
+
+                    case 8:
+                        CourseServices.DeleteCourse();
+                        break;
+
+                    case 9:
+                        StudentServices.MonthlyRevenue();
+                        break;
+
+                    case 10: return;
+
+                }
             }
 
-            // ===== Method stubs =====
-
-            static void AddCourse()
-            {
-                Console.WriteLine("Add Course logic here");
-            }
-
-            static void AddStudent()
-            {
-                Console.WriteLine("Add Student logic here");
-            }
-
-            static void ViewAllStudents()
-            {
-                Console.WriteLine("View All Students logic here");
-            }
-
-            static void ViewAllCourses()
-            {
-                Console.WriteLine("View All Courses logic here");
-            }
-
-            static void UpdateStudent()
-            {
-                Console.WriteLine("Update Student logic here");
-            }
-
-            static void DeleteStudent()
-            {
-                Console.WriteLine("Delete Student logic here");
-            }
-
-            static void SearchStudentByName()
-            {
-                Console.WriteLine("Search Student by Name logic here");
-            }
-
-            static void SearchByCourse()
-            {
-                Console.WriteLine("Search by Course logic here");
-            }
-
-            static void SearchStudentsWithFeeDue()
-            {
-                Console.WriteLine("Search Students with Fee Due logic here");
-            }
-
-            static void SearchByAdmissionMonth()
-            {
-                Console.WriteLine("Search by Admission Month logic here");
-            }
         }
-
-
-
-
-
-
-    }
     }
 }
+

@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="C#_StudentCourseFeeManagementSystem_02-05-2026.csproj" />
+  <Project Path="C#_StudentCourseFeeManagementSystem_02-05-2026.csproj" Id="91155d7e-85d2-4e14-be5c-579ac17fcc5f" />
+  <Project Path="testing/testing.csproj" Id="09fcf175-9cf8-4ae9-8ff1-9717c1b57b70" />
 </Solution>
