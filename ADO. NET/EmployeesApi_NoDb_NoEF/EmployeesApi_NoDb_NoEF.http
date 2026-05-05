@@ -1,0 +1,6 @@
+@EmployeesApi_NoDb_NoEF_HostAddress = http://localhost:5257
+
+GET {{EmployeesApi_NoDb_NoEF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
