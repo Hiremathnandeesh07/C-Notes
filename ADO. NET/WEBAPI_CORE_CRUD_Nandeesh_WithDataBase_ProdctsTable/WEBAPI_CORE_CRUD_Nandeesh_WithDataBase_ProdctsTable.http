@@ -1,0 +1,6 @@
+@WEBAPI_CORE_CRUD_Nandeesh_WithDataBase_ProdctsTable_HostAddress = http://localhost:5182
+
+GET {{WEBAPI_CORE_CRUD_Nandeesh_WithDataBase_ProdctsTable_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

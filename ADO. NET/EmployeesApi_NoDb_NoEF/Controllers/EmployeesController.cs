@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeesApi_NoDb_NoEF.Controllers
 {
+    // ApiController is a PROPERTY
     [ApiController]
     [Route("api/[controller]")]
     public class EmployeesController : ControllerBase
@@ -24,6 +25,9 @@ namespace EmployeesApi_NoDb_NoEF.Controllers
 
             return Ok(emp);
         }
+
+
+        
 
         // CREATE
         [HttpPost]
@@ -50,6 +54,17 @@ namespace EmployeesApi_NoDb_NoEF.Controllers
             return Ok(emp);
         }
 
+
+
+
+
+
+
+
+
+
+
+
         // DELETE
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
@@ -60,6 +75,11 @@ namespace EmployeesApi_NoDb_NoEF.Controllers
 
             EmployeeStore.Employees.Remove(emp);
             return Ok("Deleted successfully");
+
+
+
+
+
         }
     }
 }

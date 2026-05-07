@@ -6,6 +6,7 @@
         public string Name { get; set; }
         public string Role { get; set; }
         public double Salary { get; set; }
+
     }
 
     public static class EmployeeStore
