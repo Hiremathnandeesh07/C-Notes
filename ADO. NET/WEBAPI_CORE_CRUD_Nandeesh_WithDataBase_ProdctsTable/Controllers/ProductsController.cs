@@ -25,6 +25,8 @@ namespace WEBAPI_CORE_CRUD_Nandeesh_WithDataBase_ProdctsTable.Controllers
             return Ok(_data.GetAll());
         }
 
+
+
         [HttpGet("{id}")]
 
         public IActionResult Get(int id)
