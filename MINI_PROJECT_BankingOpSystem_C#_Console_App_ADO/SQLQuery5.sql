@@ -228,3 +228,6 @@ END;
 
 
 select * from Customers
+
+
+select * from 196401774,1000000011,1000

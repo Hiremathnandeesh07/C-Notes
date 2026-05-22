@@ -1,0 +1,159 @@
+{
+  "name": "vscode-wallpaper-pro",
+  "displayName": "Wallpaper Pro \u2014 VSCode Background Manager",
+  "description": "Set beautiful wallpapers and background images for every section of VS Code: editor, sidebar, terminal, panel, and more.",
+  "version": "1.0.0",
+  "publisher": "wallpaper-pro",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "wallpaper",
+    "background",
+    "theme",
+    "customization",
+    "aesthetic"
+  ],
+  "icon": "resources/icon.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "wallpaperPro.openPanel",
+        "title": "\ud83d\uddbc\ufe0f Open Wallpaper Manager",
+        "category": "Wallpaper Pro"
+      },
+      {
+        "command": "wallpaperPro.clearAll",
+        "title": "\ud83d\uddd1\ufe0f Clear All Wallpapers",
+        "category": "Wallpaper Pro"
+      },
+      {
+        "command": "wallpaperPro.randomize",
+        "title": "\ud83c\udfb2 Randomize Wallpapers",
+        "category": "Wallpaper Pro"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "wallpaperPro.openPanel"
+        },
+        {
+          "command": "wallpaperPro.clearAll"
+        },
+        {
+          "command": "wallpaperPro.randomize"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Wallpaper Pro",
+      "properties": {
+        "wallpaperPro.editorBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Background image URL or path for the editor area"
+        },
+        "wallpaperPro.sidebarBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Background image URL or path for the sidebar"
+        },
+        "wallpaperPro.terminalBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Background image URL or path for the terminal"
+        },
+        "wallpaperPro.panelBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Background image URL or path for the bottom panel"
+        },
+        "wallpaperPro.activityBarBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Background image URL or path for the activity bar"
+        },
+        "wallpaperPro.titleBarBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Background image URL or path for the title bar"
+        },
+        "wallpaperPro.statusBarBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Background image URL or path for the status bar"
+        },
+        "wallpaperPro.globalBackground": {
+          "type": "string",
+          "default": "",
+          "description": "Global fallback background image applied to all sections"
+        },
+        "wallpaperPro.opacity": {
+          "type": "number",
+          "default": 0.15,
+          "minimum": 0.01,
+          "maximum": 1,
+          "description": "Background image opacity (0.01 - 1.0)"
+        },
+        "wallpaperPro.backgroundSize": {
+          "type": "string",
+          "default": "cover",
+          "enum": [
+            "cover",
+            "contain",
+            "auto",
+            "stretch"
+          ],
+          "description": "How background images are sized"
+        },
+        "wallpaperPro.backgroundPosition": {
+          "type": "string",
+          "default": "center",
+          "enum": [
+            "center",
+            "top",
+            "bottom",
+            "left",
+            "right",
+            "top left",
+            "top right",
+            "bottom left",
+            "bottom right"
+          ],
+          "description": "Background image position"
+        },
+        "wallpaperPro.blur": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Background blur amount in pixels"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^5.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/vscode-wallpaper-pro"
+  },
+  "license": "MIT"
+}

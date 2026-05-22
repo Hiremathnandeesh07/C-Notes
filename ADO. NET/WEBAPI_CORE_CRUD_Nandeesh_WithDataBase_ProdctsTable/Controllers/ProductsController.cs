@@ -11,7 +11,7 @@ namespace WEBAPI_CORE_CRUD_Nandeesh_WithDataBase_ProdctsTable.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly ProductData _data;
+        private readonly ProductData _data; 
 
         public ProductsController(ProductData data)
         {
