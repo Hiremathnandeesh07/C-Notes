@@ -1,5 +1,7 @@
 USE Hospital_Management_DB
 
+
+select * from Appointments
 CREATE TABLE Appointments
 (
  AppointmentId INT PRIMARY KEY IDENTITY(1,1),
@@ -41,13 +43,11 @@ BEGIN
 
         BEGIN TRANSACTION;
 
-        -- Validate appointment date
         IF @AppointmentDate < GETDATE()
         BEGIN
             THROW 50001, 'Appointment date cannot be in the past', 1;
         END
 
-        -- Check doctor availability
         IF NOT EXISTS
         (
             SELECT 1
@@ -59,7 +59,24 @@ BEGIN
             THROW 50002, 'Doctor is unavailable', 1;
         END
 
-        -- Book appointment
+        -- Appointment duration = 1 hour
+        IF EXISTS
+        (
+            SELECT 1
+            FROM Appointments
+            WHERE DoctorCode = @DoctorCode
+              AND AppointmentStatus = 'Scheduled'
+              AND @AppointmentDate <
+                    DATEADD(HOUR,1,AppointmentDate)
+              AND DATEADD(HOUR,1,@AppointmentDate) >
+                    AppointmentDate
+        )
+        BEGIN
+            THROW 50003,
+                  'Doctor already has an appointment during this time slot',
+                  1;
+        END
+
         INSERT INTO Appointments
         (
             PatientCode,
@@ -80,7 +97,6 @@ BEGIN
         COMMIT;
 
     END TRY
-
     BEGIN CATCH
 
         IF @@TRANCOUNT > 0
@@ -90,7 +106,6 @@ BEGIN
 
     END CATCH
 END
-
 
 -- cancel appointment
 CREATE PROCEDURE sp_CancelAppointment
@@ -134,7 +149,7 @@ END
 
 
 -- get upcomming appointments
-CREATE PROCEDURE sp_GetUpcomingAppointments
+ALTER PROCEDURE sp_GetUpcomingAppointments
 AS
 BEGIN
     BEGIN TRY
@@ -144,7 +159,8 @@ BEGIN
             PatientCode,
             DoctorCode,
             AppointmentDate,
-            AppointmentStatus
+            AppointmentStatus,
+            CancelledAt
         FROM Appointments
         WHERE AppointmentDate >= GETDATE()
         AND AppointmentStatus = 'Scheduled'
@@ -223,3 +239,22 @@ END
 
 
 
+CREATE PROCEDURE sp_UpdateCompletedAppointments
+AS
+BEGIN
+    BEGIN TRY
+
+        UPDATE Appointments
+        SET AppointmentStatus = 'Completed'
+        WHERE AppointmentStatus = 'Scheduled'
+          AND AppointmentDate < GETDATE();
+
+    END TRY
+
+    BEGIN CATCH
+
+        THROW;
+
+    END CATCH
+END
+GO

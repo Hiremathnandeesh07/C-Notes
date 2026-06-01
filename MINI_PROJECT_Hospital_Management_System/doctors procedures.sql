@@ -1,5 +1,10 @@
 USE Hospital_Management_DB
 
+
+
+
+
+
 sp_AddDoctor
 sp_GetDoctors
 sp_GetDoctorsBySpecialization
@@ -66,13 +71,34 @@ END
 
 -- GET DOCTOR
 
+CREate PROCEDURE sp_GetDoctors
+AS
+BEGIN
+    BEGIN TRY
 
+        SELECT
+            DoctorCode,
+            FullName,
+            Specialization,
+            Phone,
+            ConsultationFee,
+            IsAvailable,
+            CreatedAt,
+            UpdatedAt
+        FROM Doctors;
+
+    END TRY
+
+    BEGIN CATCH
+        THROW;
+    END CATCH
+END
 
 
 
 -- get doctor by specialization
 
-CREATE PROCEDURE sp_GetDoctorsBySpecialization
+alter PROCEDURE sp_GetDoctorsBySpecialization
     @Specialization VARCHAR(100),
     @IsAvailable BIT = NULL
 AS
@@ -85,7 +111,9 @@ BEGIN
             Specialization,
             Phone,
             ConsultationFee,
-            IsAvailable
+            IsAvailable,
+            CreatedAt,
+            UpdatedAt
         FROM Doctors
         WHERE Specialization = @Specialization
           AND (@IsAvailable IS NULL OR IsAvailable = @IsAvailable);
