@@ -1,4 +1,5 @@
 using Hospital_Management_Web_Api.Helpers;
+using Hospital_Management_Web_Api.Middleware;
 using Hospital_Management_Web_Api.Middlewares;
 using Hospital_Management_Web_Api.Repositories;
 using Hospital_Management_Web_Api.Repositories.Interface;
@@ -21,22 +22,23 @@ public static class Program
         // adding DATABASE DI
         builder.Services.AddScoped<DatabaseHelper>();
 
-        // adding Patient related injection
+        // adding Patient related service
         builder.Services.AddScoped<IPatientRepository, PatientRepository>();
         builder.Services.AddScoped<IPatientService, PatientService>();
 
 
-        // addin doctor related injection
+        // addin doctor related service
         builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 
         builder.Services.AddScoped<IDoctorService, DoctorService>();
 
 
-        // adding appointment related injection
+        // adding appointment related service
         builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
         builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
 
+        // adding report related service
         builder.Services.AddScoped<IReportRepository, ReportRepository>();
         builder.Services.AddScoped<IReportService, ReportService>();
 
@@ -50,6 +52,8 @@ public static class Program
         }
 
         app.UseAuthorization();
+        app.UseMiddleware<RequestLoggingMiddleware>();
+
         app.UseMiddleware<ExceptionMiddleware>();
 
         app.MapControllers();
