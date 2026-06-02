@@ -11,6 +11,6 @@ namespace Hospital_Management_Web_Api.Models.Doctor.DTOs
         [Required]
         public string Phone { get; set; } = string.Empty;
         [Required]
-        public decimal? ConsultationFee { get; set; }
+        public decimal ConsultationFee { get; set; }
     }
 }
