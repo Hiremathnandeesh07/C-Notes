@@ -7,7 +7,7 @@ namespace Hospital_Management_Web_Api.Services.Interface
     {
         Task AddPatientAsync(CreatePatientDto dto);
 
-        Task UpdatePatientAsync(int atientCode, UpdatePatientDto dto);
+        Task UpdatePatientAsync(int patientCode, UpdatePatientDto dto);
 
         Task DeactivatePatientAsync(int patientCode);
 

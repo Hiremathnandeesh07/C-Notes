@@ -54,16 +54,15 @@ namespace Hospital_Management_Web_Api.Controllers
             await _patientService.DeactivatePatientAsync(patientCode);
         }
 
-        [HttpGet("{PatientCode}")]
+        [HttpGet("{patientCode}")]
         public async Task<IActionResult> GetPatientById(int patientCode)
         {
-
             var patient = await _patientService.GetPatientByIdAsync(patientCode);
 
             if (patient == null)
-                throw new Exception("no patient exist with this patientId");
-            return Ok(patient);
+                return NotFound($"Patient with ID {patientCode} not found.");
 
+            return Ok(patient);
         }
 
 

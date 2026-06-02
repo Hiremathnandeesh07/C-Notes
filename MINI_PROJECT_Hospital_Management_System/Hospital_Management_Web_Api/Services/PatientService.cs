@@ -60,13 +60,11 @@ namespace Hospital_Management_Web_Api.Services
 
 
         // GET PATIENTS BY ID
-        async Task<Patient> IPatientService.GetPatientByIdAsync(int patientCode)
+        public async Task<Patient?> GetPatientByIdAsync(int patientCode)
         {
             var patient = await _patientRepository.GetPatientByIdAsync(patientCode);
 
-            if (patient == null)
-                throw new KeyNotFoundException($"Patient with ID {patientCode} not found.");
-
+            // return null if not found; controller will handle NotFound response
             return patient;
         }
 
