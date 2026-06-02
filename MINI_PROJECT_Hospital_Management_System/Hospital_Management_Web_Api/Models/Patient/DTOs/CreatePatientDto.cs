@@ -8,8 +8,7 @@ namespace Hospital_Management_Web_Api.Models.Patient.DTOs
         public string FullName { get; set; } = string.Empty;
         [Required]
         [DataType(DataType.Date)]
-        
-        public DateTime DOB { get; set; }
+        public DateTime? DOB { get; set; }
         [Required]
         public string Gender { get; set; } = string.Empty;
         [Required]

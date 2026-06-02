@@ -2,6 +2,7 @@
 using Hospital_Management_Web_Api.Models.Appointment.DTOs;
 using Hospital_Management_Web_Api.Repositories.Interface;
 using Hospital_Management_Web_Api.Services.Interface;
+using System.ComponentModel.DataAnnotations;
 
 namespace Hospital_Management_Web_Api.Services
 {
@@ -16,10 +17,19 @@ namespace Hospital_Management_Web_Api.Services
 
         public async Task BookAppointmentAsync(BookAppointmentDto dto)
         {
-            if (dto.DoctorCode <= 0)
-                throw new Exception("Invalid doctor");
+            // Validate required fields (DTO model validation should already run,
+            // but validate defensively in service layer as well).
+            if (dto == null)
+                throw new ArgumentNullException(nameof(dto));
 
-          
+            if (!dto.DoctorCode.HasValue || dto.DoctorCode.Value <= 0)
+                throw new ValidationException("Invalid or missing doctor code.");
+
+            if (!dto.PatientCode.HasValue || dto.PatientCode.Value <= 0)
+                throw new ValidationException("Invalid or missing patient code.");
+
+            if (!dto.AppointmentDate.HasValue)
+                throw new ValidationException("Missing appointment date.");
 
             await _repo.BookAppointmentAsync(dto);
         }

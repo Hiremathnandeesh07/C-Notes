@@ -51,10 +51,18 @@ public static class Program
             app.UseSwaggerUI();
         }
 
-        app.UseAuthorization();
+        // Exception middleware should be registered early so it can catch
+        // exceptions thrown by downstream middleware and controllers.
+        app.UseMiddleware<ExceptionMiddleware>();
+
+        // Request logging should run after exception handling but before
+        // routing/authorization so it records every incoming request.
         app.UseMiddleware<RequestLoggingMiddleware>();
 
-        app.UseMiddleware<ExceptionMiddleware>();
+        // Ensure routing is enabled before authorization and endpoints are mapped.
+        app.UseRouting();
+
+        app.UseAuthorization();
 
         app.MapControllers();
 
