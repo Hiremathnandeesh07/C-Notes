@@ -1,4 +1,9 @@
-﻿using Microsoft.Data.SqlClient;
+﻿//This middleware provides global exception handling.
+//Instead of writing try-catch blocks in every controller, service, and repository,
+//any unhandled exception that reaches this middleware is caught and converted into a
+//proper HTTP response.
+
+using Microsoft.Data.SqlClient;
 
 namespace Hospital_Management_Web_Api.Middlewares
 {
@@ -20,6 +25,9 @@ namespace Hospital_Management_Web_Api.Middlewares
             catch (SqlException ex)
             {
                 context.Response.Clear();
+                /*context.Response.Clear() is used to remove anything that has 
+                already been written to the response before 
+                sending your error response.*/
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 context.Response.ContentType = "application/json";
 
