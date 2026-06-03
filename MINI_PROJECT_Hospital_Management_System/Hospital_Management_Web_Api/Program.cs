@@ -1,3 +1,4 @@
+using Hospital_Management_Web_Api;
 using Hospital_Management_Web_Api.Helpers;
 using Hospital_Management_Web_Api.Middleware;
 using Hospital_Management_Web_Api.Middlewares;
@@ -18,6 +19,8 @@ public static class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.AddScoped<EmailService>();
 
         // adding DATABASE DI
         builder.Services.AddScoped<DatabaseHelper>();

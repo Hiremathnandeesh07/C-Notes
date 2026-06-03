@@ -1,4 +1,5 @@
 ﻿using Hospital_Management_Web_Api.Helpers;
+using Hospital_Management_Web_Api.Models;
 using Hospital_Management_Web_Api.Models.Appointment;
 using Hospital_Management_Web_Api.Models.Appointment.DTOs;
 using Hospital_Management_Web_Api.Repositories.Interface;
@@ -143,6 +144,36 @@ namespace Hospital_Management_Web_Api.Repositories
                     ? null
                     : Convert.ToDateTime(reader["CancelledAt"])
             };
+        }
+
+
+
+        public async Task<PatientEmailDetails?> GetPatientEmailDetailsAsync(int patientCode)
+        {
+            using SqlConnection con = _dbHelper.GetConnection();
+
+            using SqlCommand cmd =
+                new("sp_GetPatientEmailDetails", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@PatientCode", patientCode);
+
+            await con.OpenAsync();
+
+            using SqlDataReader reader =
+                await cmd.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
+            {
+                return new PatientEmailDetails
+                {
+                    FullName = reader["FullName"].ToString()!,
+                    Email = reader["Email"].ToString()!
+                };
+            }
+
+            return null;
         }
     }
 }

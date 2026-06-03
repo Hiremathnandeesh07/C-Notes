@@ -9,10 +9,17 @@ namespace Hospital_Management_Web_Api.Services
     public class AppointmentService : IAppointmentService
     {
         private readonly IAppointmentRepository _repo;
+        private readonly EmailService _emailService;
+        private readonly IPatientRepository _patientRepo;
 
-        public AppointmentService(IAppointmentRepository repo)
+        public AppointmentService(
+            IAppointmentRepository repo,
+            EmailService emailService,
+            IPatientRepository patientRepo)
         {
             _repo = repo;
+            _emailService = emailService;
+            _patientRepo = patientRepo;
         }
 
         public async Task BookAppointmentAsync(BookAppointmentDto dto)
@@ -32,6 +39,22 @@ namespace Hospital_Management_Web_Api.Services
                 throw new ValidationException("Missing appointment date.");
 
             await _repo.BookAppointmentAsync(dto);
+
+
+            var patient =
+        await _repo.GetPatientEmailDetailsAsync(
+            dto.PatientCode.Value);
+
+            if (patient != null &&
+                !string.IsNullOrWhiteSpace(patient.Email))
+            {
+                await _emailService.SendAppointmentEmailAsync(
+                    patient.Email,
+                    patient.FullName,
+                    dto.AppointmentDate.Value);
+            }
+
+
         }
 
         public async Task CancelAppointmentAsync(int appointmentId)

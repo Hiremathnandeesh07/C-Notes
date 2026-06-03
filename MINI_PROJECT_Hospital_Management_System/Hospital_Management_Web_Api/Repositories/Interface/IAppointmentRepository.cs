@@ -1,4 +1,5 @@
-﻿using Hospital_Management_Web_Api.Models.Appointment;
+﻿using Hospital_Management_Web_Api.Models;
+using Hospital_Management_Web_Api.Models.Appointment;
 using Hospital_Management_Web_Api.Models.Appointment.DTOs;
 
 namespace Hospital_Management_Web_Api.Repositories.Interface
@@ -14,5 +15,7 @@ namespace Hospital_Management_Web_Api.Repositories.Interface
         Task<List<Appointment>> GetDoctorAppointmentsAsync(int doctorCode);
 
         Task<List<Appointment>> GetPatientAppointmentsAsync(int patientCode);
+
+        Task<PatientEmailDetails?> GetPatientEmailDetailsAsync(int patientCode);
     }
 }
