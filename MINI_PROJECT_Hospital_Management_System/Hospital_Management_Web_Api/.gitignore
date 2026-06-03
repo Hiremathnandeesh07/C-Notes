@@ -1,0 +1,33 @@
+## Ignore Visual Studio temporary files, build outputs and user-specific files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider
+.idea/
+
+## Build artifacts
+artifacts/
+
+## ASP.NET Core / dotnet
+project.lock.json
+project.fragment.lock.json
+*.log
+
+## App settings and secrets (do NOT commit secrets)
+appsettings.json
+appsettings.*.json
+secrets.json
+
+## dotnet user-secrets folder (if used)
+.microsoft/usersecrets/
+.dotnet/usersecrets/
+
+## OneDrive / OS generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
