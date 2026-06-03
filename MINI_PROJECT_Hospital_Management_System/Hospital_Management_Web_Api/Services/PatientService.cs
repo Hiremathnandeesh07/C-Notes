@@ -12,6 +12,7 @@ namespace Hospital_Management_Web_Api.Services
         public readonly IPatientRepository _patientRepository;
 
 
+        // Constructor for PatientService
         public PatientService (IPatientRepository patientRepository)
         {
             _patientRepository = patientRepository;

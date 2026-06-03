@@ -13,12 +13,14 @@ namespace Hospital_Management_Web_Api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+        // Constructor for WeatherForecastController
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
+        // Returns a sample weather forecast
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

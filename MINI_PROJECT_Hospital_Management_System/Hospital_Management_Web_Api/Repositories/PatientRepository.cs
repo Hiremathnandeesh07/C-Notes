@@ -13,6 +13,7 @@ namespace Hospital_Management_Web_Api.Repositories
 
         private readonly DatabaseHelper _dbHelper;
 
+        // Constructor for PatientRepository
         public PatientRepository(DatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
@@ -21,6 +22,7 @@ namespace Hospital_Management_Web_Api.Repositories
 
 
 
+        // Adds a new patient to the database
         public async Task AddPatientAsync(CreatePatientDto dto)
         {
             try
@@ -55,6 +57,7 @@ namespace Hospital_Management_Web_Api.Repositories
 
 
         // DEACTIVATING PATIENT
+        // Deactivates a patient by code
         public async Task DeactivatePatientAsync(int patientCode)
         {
             try
@@ -82,6 +85,7 @@ namespace Hospital_Management_Web_Api.Repositories
 
 
         // updating the patient details
+        // Updates patient details in the database
         public async Task UpdatePatientAsync(int patientCode, UpdatePatientDto dto)
         {
             try
@@ -120,6 +124,7 @@ namespace Hospital_Management_Web_Api.Repositories
 
         }
         // GETTING ALL THE PATIENTS
+        // Retrieves all patients (explicit interface implementation)
          async Task<List<Patient>> IPatientRepository.GetAllPatientsAsync()
         {
             using(SqlConnection con = _dbHelper.GetConnection())
@@ -148,6 +153,7 @@ namespace Hospital_Management_Web_Api.Repositories
             }
         }
 
+        // Retrieves a patient by id (explicit interface implementation)
         async Task<Patient?> IPatientRepository.GetPatientByIdAsync(int patientCode)
         {
             try

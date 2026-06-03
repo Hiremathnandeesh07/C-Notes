@@ -11,7 +11,8 @@ namespace Hospital_Management_Web_Api.Controllers
     public class DoctorController : ControllerBase
     {
         private readonly IDoctorService _doctorService;
-            public DoctorController(IDoctorService doctorServices)
+        // Constructor for DoctorController
+        public DoctorController(IDoctorService doctorServices)
         {
             _doctorService = doctorServices;
         }
@@ -28,6 +29,7 @@ namespace Hospital_Management_Web_Api.Controllers
         }
 
         [HttpGet]
+        // Retrieves all doctors
         public async Task<IActionResult> GetDoctors()
         {
             var doctors = await _doctorService.GetDoctorsAsync();
@@ -37,6 +39,7 @@ namespace Hospital_Management_Web_Api.Controllers
 
 
         [HttpGet("specialization/{specialization}")]
+        // Retrieves doctors by specialization
         public async Task<IActionResult> GetDoctorsBySpecialization(string specialization)
         {
             var doctors =

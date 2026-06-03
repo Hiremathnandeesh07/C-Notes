@@ -12,11 +12,13 @@ namespace Hospital_Management_Web_Api.Repositories
     {
         private readonly DatabaseHelper _dbHelper;
 
+        // Constructor for AppointmentRepository
         public AppointmentRepository(DatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
         }
 
+        // Books an appointment in the database
         public async Task BookAppointmentAsync(BookAppointmentDto dto)
         {
             using SqlConnection con = _dbHelper.GetConnection();
@@ -33,6 +35,7 @@ namespace Hospital_Management_Web_Api.Repositories
             await cmd.ExecuteNonQueryAsync();
         }
 
+        // Cancels an appointment in the database
         public async Task CancelAppointmentAsync(int appointmentId)
         {
             using SqlConnection con = _dbHelper.GetConnection();
@@ -46,6 +49,7 @@ namespace Hospital_Management_Web_Api.Repositories
             await cmd.ExecuteNonQueryAsync();
         }
 
+        // Retrieves upcoming appointments from the database
         public async Task<List<Appointment>> GetUpcomingAppointmentsAsync()
         {
             List<Appointment> appointments = new();
@@ -70,6 +74,7 @@ namespace Hospital_Management_Web_Api.Repositories
             return appointments;
         }
 
+        // Retrieves appointments for a specific doctor
         public async Task<List<Appointment>> GetDoctorAppointmentsAsync(int doctorCode)
         {
             List<Appointment> appointments = new();
@@ -95,6 +100,7 @@ namespace Hospital_Management_Web_Api.Repositories
             return appointments;
         }
 
+        // Retrieves appointments for a specific patient
         public async Task<List<Appointment>> GetPatientAppointmentsAsync(int patientCode)
         {
             List<Appointment> appointments = new();
@@ -120,6 +126,7 @@ namespace Hospital_Management_Web_Api.Repositories
             return appointments;
         }
 
+        // Updates appointments marked as completed based on date
         private async Task UpdateCompletedAppointmentsAsync(SqlConnection con)
         {
             using SqlCommand cmd = new("sp_UpdateCompletedAppointments", con);
@@ -129,6 +136,7 @@ namespace Hospital_Management_Web_Api.Repositories
             await cmd.ExecuteNonQueryAsync();
         }
 
+        // Maps a data reader row to an Appointment model
         private Appointment MapAppointment(SqlDataReader reader)
         {
             return new Appointment

@@ -11,6 +11,7 @@ namespace Hospital_Management_Web_Api.Services
     {
         private readonly IDoctorRepository _doctorRepository;
 
+        // Constructor for DoctorService
         public DoctorService(IDoctorRepository doctorRepository)
         {
             _doctorRepository = doctorRepository;
@@ -18,6 +19,7 @@ namespace Hospital_Management_Web_Api.Services
 
      
 
+        // Adds a new doctor after validation
         public async Task AddDoctorAsync(CreateDoctorDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.FullName))
@@ -32,16 +34,19 @@ namespace Hospital_Management_Web_Api.Services
             await _doctorRepository.AddDoctorAsync(dto);
         }
 
+        // Retrieves list of doctors
         public async Task<List<Doctor>> GetDoctorsAsync()
         {
             return await _doctorRepository.GetDoctorsAsync();
         }
 
+        // Returns underlying doctor repository (internal use)
         public IDoctorRepository Get_doctorRepository1()
         {
             return _doctorRepository;
         }
 
+        // Retrieves doctors by specialization after validation
         public async Task<List<Doctor>> GetDoctorsBySpecializationAsync(
             string specialization)
         {

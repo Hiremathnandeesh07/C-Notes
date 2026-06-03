@@ -13,7 +13,7 @@ namespace Hospital_Management_Web_Api.Middleware
         // Built-in ASP.NET Core logger
         private readonly ILogger<RequestLoggingMiddleware> _logger;
 
-        // Constructor Dependency Injection
+        // Constructor for RequestLoggingMiddleware
         public RequestLoggingMiddleware(
             RequestDelegate next,
             ILogger<RequestLoggingMiddleware> logger)
@@ -22,7 +22,7 @@ namespace Hospital_Management_Web_Api.Middleware
             _logger = logger;
         }
 
-        // This method is executed automatically for every request
+        // Invokes middleware logic for each HTTP request
         public async Task InvokeAsync(HttpContext context)
         {
             // Start measuring request execution time

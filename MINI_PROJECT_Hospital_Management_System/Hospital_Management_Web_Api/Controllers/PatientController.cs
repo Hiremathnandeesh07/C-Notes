@@ -10,6 +10,7 @@ namespace Hospital_Management_Web_Api.Controllers
     public class PatientController : ControllerBase
     {
         private readonly IPatientService _patientService;
+        // Constructor for PatientController
         public PatientController(IPatientService patientService)
         {
             _patientService = patientService;
@@ -19,6 +20,7 @@ namespace Hospital_Management_Web_Api.Controllers
 
 
         [HttpGet]
+        // Retrieves all patients
         public async Task<IActionResult> GetAllPatients()
         {
 

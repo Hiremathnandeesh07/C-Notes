@@ -9,6 +9,7 @@ using Hospital_Management_Web_Api.Services.Interface;
 
 public static class Program
 {
+    // Application entry point
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);

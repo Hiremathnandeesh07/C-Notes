@@ -9,11 +9,13 @@ namespace Hospital_Management_Web_Api.Repositories
     {
         private readonly DatabaseHelper _dbHelper;
 
+        // Constructor for ReportRepository
         public ReportRepository(DatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
         }
 
+        // Retrieves appointment report data from the database
         public async Task<List<AppointmentReportDto>> GetAppointmentReportAsync()
         {
             List<AppointmentReportDto> list = new();
@@ -44,6 +46,7 @@ namespace Hospital_Management_Web_Api.Repositories
             return list;
         }
 
+        // Retrieves revenue grouped by specialization from the database
         public async Task<List<RevenueBySpecializationDto>> GetRevenueBySpecializationAsync()
         {
             List<RevenueBySpecializationDto> list = new();
@@ -70,6 +73,7 @@ namespace Hospital_Management_Web_Api.Repositories
             return list;
         }
 
+        // Retrieves doctors with more than two appointments
         public async Task<List<DoctorAppointmentStatsDto>> GetDoctorsWithMoreThan2AppointmentsAsync()
         {
             List<DoctorAppointmentStatsDto> list = new();

@@ -12,6 +12,7 @@ namespace Hospital_Management_Web_Api.Services
         private readonly EmailService _emailService;
         private readonly IPatientRepository _patientRepo;
 
+        // Constructor for AppointmentService
         public AppointmentService(
             IAppointmentRepository repo,
             EmailService emailService,
@@ -22,6 +23,7 @@ namespace Hospital_Management_Web_Api.Services
             _patientRepo = patientRepo;
         }
 
+        // Books an appointment after validation
         public async Task BookAppointmentAsync(BookAppointmentDto dto)
         {
             // Validate required fields (DTO model validation should already run,
@@ -57,6 +59,7 @@ namespace Hospital_Management_Web_Api.Services
 
         }
 
+        // Cancels an appointment
         public async Task CancelAppointmentAsync(int appointmentId)
         {
             if (appointmentId <= 0)
@@ -65,11 +68,13 @@ namespace Hospital_Management_Web_Api.Services
             await _repo.CancelAppointmentAsync(appointmentId);
         }
 
+        // Retrieves upcoming appointments
         public async Task<List<Appointment>> GetUpcomingAppointmentsAsync()
         {
             return await _repo.GetUpcomingAppointmentsAsync();
         }
 
+        // Retrieves appointments for a given doctor
         public async Task<List<Appointment>> GetDoctorAppointmentsAsync(int doctorCode)
         {
             if (doctorCode <= 0)

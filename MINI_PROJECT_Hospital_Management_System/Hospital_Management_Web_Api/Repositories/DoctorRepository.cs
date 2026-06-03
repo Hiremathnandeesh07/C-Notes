@@ -11,11 +11,13 @@ namespace Hospital_Management_Web_Api.Repositories
     {
         private readonly DatabaseHelper _dbHelper;
 
+        // Constructor for DoctorRepository
         public DoctorRepository(DatabaseHelper dbHelper)
         {
             _dbHelper = dbHelper;
         }
 
+        // Adds a doctor to the database
         public async Task AddDoctorAsync(CreateDoctorDto dto)
         {
             using SqlConnection con = _dbHelper.GetConnection();
@@ -41,7 +43,7 @@ namespace Hospital_Management_Web_Api.Repositories
         }
 
 
-        // mapping loop
+        // Maps a data reader row to a Doctor model
         private Doctor MapDoctor(SqlDataReader reader)
         {
             return new Doctor
@@ -62,6 +64,7 @@ namespace Hospital_Management_Web_Api.Repositories
             };
         }
 
+        // Retrieves all doctors
         public async Task<List<Doctor>> GetDoctorsAsync()
         {
             List<Doctor> doctors = new();
@@ -87,6 +90,7 @@ namespace Hospital_Management_Web_Api.Repositories
             return doctors;
         }
 
+        // Retrieves doctors filtered by specialization
         public async Task<List<Doctor>> GetDoctorsBySpecializationAsync(
             string specialization)
         {
