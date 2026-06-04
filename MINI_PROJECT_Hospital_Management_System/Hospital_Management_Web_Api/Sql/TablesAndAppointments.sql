@@ -1,7 +1,6 @@
 CREATE DATABASE Hospital_Management_DB
 USE Hospital_Management_DB
 
-select * from Patients
 
 -- Creating Table 
 -- 1. Patient's Table 
@@ -410,4 +409,26 @@ BEGIN
 
     END CATCH
 END
+
+
+
+
+
+SELECT name AS ProcedureNames 
+FROM Sys.procedures
+
+
+SELECT *
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE';
+
+
+exec sp_helptext 'sp_GetPatientById'
+
+
+SELECT    COLUMN_NAME,   
+          DATA_TYPE,    
+          IS_NULLABLE
+FROM      INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Appointments';
 
